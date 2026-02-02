@@ -192,7 +192,7 @@ The model accurately predicts total revenue based on transaction features, makin
 
 ## 📄 License
 
-This project is licensed under the terms specified in the LICENSE file.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👤 Author
 

@@ -192,8 +192,8 @@ class AmazonSalesAnalysis:
         axes[0, 1].set_xlabel('Total Revenue')
         
         # Average order value by category
-        avg_order = self.df.groupby('product_category')['total_revenue'].mean().sort_values()
-        avg_order.plot(kind='barh', ax=axes[1, 0], color='coral')
+        avg_revenue_by_category = self.df.groupby('product_category')['total_revenue'].mean().sort_values()
+        avg_revenue_by_category.plot(kind='barh', ax=axes[1, 0], color='coral')
         axes[1, 0].set_title('Average Order Value by Category')
         axes[1, 0].set_xlabel('Average Revenue')
         
@@ -251,8 +251,10 @@ class AmazonSalesAnalysis:
         plt.close()
         
         # 7. Time series analysis
-        self.df['year_month'] = self.df['order_date'].dt.to_period('M')
-        monthly_revenue = self.df.groupby('year_month')['total_revenue'].sum()
+        # Create a copy to avoid modifying the original dataframe
+        df_temp = self.df.copy()
+        df_temp['year_month'] = df_temp['order_date'].dt.to_period('M')
+        monthly_revenue = df_temp.groupby('year_month')['total_revenue'].sum()
         
         plt.figure(figsize=(14, 6))
         monthly_revenue.plot(kind='line', marker='o', color='navy')
@@ -429,10 +431,11 @@ class AmazonSalesAnalysis:
         print("BUILDING CLASSIFICATION MODELS (Predicting Rating Category)")
         print("=" * 80)
         
-        # Create rating categories: Low (1-2), Medium (2-4), High (4-5)
+        # Create rating categories: Low (1-2), Medium (3-4), High (5)
+        # Using bins to ensure: 1-2 = Low, 3-4 = Medium, 5 = High
         self.df_processed['rating_category'] = pd.cut(
             self.df_processed['rating'], 
-            bins=[0, 2, 4, 5], 
+            bins=[0, 2.5, 4.5, 5.1], 
             labels=['Low', 'Medium', 'High']
         )
         

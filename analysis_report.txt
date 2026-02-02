@@ -5,7 +5,7 @@ AMAZON SALES DATA ANALYSIS - COMPREHENSIVE REPORT
 1. DATASET SUMMARY
 --------------------------------------------------------------------------------
 Total Records: 50,000
-Total Features: 14
+Total Features: 13
 Date Range: 2022-01-01 00:00:00 to 2023-12-31 00:00:00
 Total Revenue: $32,866,573.74
 Average Order Value: $657.33
@@ -30,7 +30,7 @@ Gradient Boosting   6.999727   5.102761  0.999819
 Linear Regression 187.247540 139.432140  0.870689
 
 Classification Model (Predicting Rating Category):
-Accuracy: 0.4987
+Accuracy: 0.4997
 
 ================================================================================
 END OF REPORT
