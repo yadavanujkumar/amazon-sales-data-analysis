@@ -1,0 +1,37 @@
+================================================================================
+AMAZON SALES DATA ANALYSIS - COMPREHENSIVE REPORT
+================================================================================
+
+1. DATASET SUMMARY
+--------------------------------------------------------------------------------
+Total Records: 50,000
+Total Features: 13
+Date Range: 2022-01-01 00:00:00 to 2023-12-31 00:00:00
+Total Revenue: $32,866,573.74
+Average Order Value: $657.33
+
+2. KEY INSIGHTS
+--------------------------------------------------------------------------------
+Top Revenue Category: Beauty ($5,550,624.97)
+Top Revenue Region: Middle East ($8,301,844.50)
+Average Product Rating: 3.00/5.0
+Average Discount: 13.3%
+
+3. MACHINE LEARNING MODEL PERFORMANCE
+--------------------------------------------------------------------------------
+
+Regression Models (Predicting Total Revenue):
+            Model       RMSE        MAE  R2_Score
+    Random Forest   6.117482   4.134782  0.999862
+Gradient Boosting   6.999727   5.102761  0.999819
+    Decision Tree  14.150330  10.052912  0.999262
+ Lasso Regression 187.144673 139.368614  0.870831
+ Ridge Regression 187.246918 139.431432  0.870690
+Linear Regression 187.247540 139.432140  0.870689
+
+Classification Model (Predicting Rating Category):
+Accuracy: 0.4997
+
+================================================================================
+END OF REPORT
+================================================================================
